@@ -1,0 +1,3 @@
+[submodule "zcjs"]
+	path = zcjs
+	url = git@github.com:BioAcoustica/zcjs.git
