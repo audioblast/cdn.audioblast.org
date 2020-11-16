@@ -6,7 +6,7 @@
 
 <body>
 
-  <p align="center"<img src="audioblast_logo.png" /></p>
+  <img src="audioblast_logo.png" />
   <h1 align="center">audioBLAST! Content delivery network</h1>
 
   <h2>audioBLAST! Resources</h2>
