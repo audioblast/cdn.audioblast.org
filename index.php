@@ -6,7 +6,7 @@
 
 <body>
 
-  <div align="center"<img src="audioblast_logo.png" /></div>
+  <img src="audioblast_logo.png" />
   <h1 align="center">audioBLAST! Content delivery network</h1>
 
   <p>This repository contains the resources hosted on cdn.audioblast.org. These resources may be specific to the audioBLAST! project, or be of general acoustic or bioacoustic utility.</p>
