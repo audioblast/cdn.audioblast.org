@@ -20,6 +20,8 @@
     <li><a href="wavesurfer">wavesurfer</a></li>
     <li><a href="zcjs">zcjs</a></li>
   </ul>
+  
+  <p>Requests and enquiries should be made via a <a href="https://github.com/audioblast/cdn.audioblast.org">GitHub issue</a>.</p>
 
 </body>
 
