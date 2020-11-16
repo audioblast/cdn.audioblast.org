@@ -18,7 +18,7 @@
     <li><a href="audioblast.php">audioBLAST! resources</a></li>
     <li><a href="jPlayer">jPlayer</a></li>
     <li><a href="wavesurfer">wavesurfer</a></li>
-    <li><a href="zcjs">zcjs</a><li>
+    <li><a href="zcjs">zcjs</a></li>
   </ul>
 
 </body>
