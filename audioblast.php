@@ -13,6 +13,7 @@
   <ul>
     <li><a href="audioblast_logo.png">audioBLAST! logo</a></li>
     <li><a href="ab-api.css">CSS file for api.audioblast.org</a></li>
+    <li><a href="ab-tabulator.js">JavaScript file for Tabulator use on audioBLAST!</a></li>
   </ul>
 
 </body>
