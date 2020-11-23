@@ -1,0 +1,35 @@
+.module {
+  background: #888;
+  padding: 5px;
+  margin: 10px;
+}
+
+.ulhoriz {
+  background: #888;
+  padding: 5px;
+  margin: 10px;
+}
+
+.ulhoriz li {
+  display: inline;
+  padding-right: 10px;
+}
+
+.stripe {
+  border-collapse:collapse;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.stripe tbody tr:nth-child(even) {
+  background: #AAA;
+}
+
+.stripe tbody tr:nth-child(odd) {
+  background: #DDD;
+}
+
+.tdcent {
+  text-align: center;
+}

@@ -12,6 +12,7 @@
   <h2>audioBLAST! Resources</h2>
   <ul>
     <li><a href="audioblast_logo.png">audioBLAST! logo</a></li>
+    <li><a href="ab-api.css">CSS file for api.audioblast.org</a></li>
   </ul>
 
 </body>
