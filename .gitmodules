@@ -1,3 +1,6 @@
 [submodule "zcjs"]
 	path = zcjs
 	url = git@github.com:BioAcoustica/zcjs.git
+[submodule "tabulator"]
+	path = tabulator
+	url = https://github.com/olifolkerd/tabulator.git
