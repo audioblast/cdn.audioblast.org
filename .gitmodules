@@ -4,3 +4,6 @@
 [submodule "tabulator"]
 	path = tabulator
 	url = https://github.com/olifolkerd/tabulator.git
+[submodule "autoComplete.js"]
+	path = autoComplete.js
+	url = git@github.com:TarekRaafat/autoComplete.js.git

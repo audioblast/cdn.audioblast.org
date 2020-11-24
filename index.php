@@ -16,6 +16,7 @@
   <h2>Resources</h2>
   <ul>
     <li><a href="audioblast.php">audioBLAST! resources</a></li>
+    <li><a href="autoComplete.js">autocomplete.js</a></li>
     <li><a href="jPlayer">jPlayer</a></li>
     <li><a href="tabulator">Tabulator</a></li>
     <li><a href="wavesurfer">wavesurfer</a></li>
