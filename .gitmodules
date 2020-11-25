@@ -7,3 +7,6 @@
 [submodule "autoComplete.js"]
 	path = autoComplete.js
 	url = git@github.com:TarekRaafat/autoComplete.js.git
+[submodule "plotly.js"]
+	path = plotly.js
+	url = git@github.com:plotly/plotly.js.git

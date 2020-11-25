@@ -25,6 +25,42 @@ var generateTabulator = function(element, table) {
   xhr.send(null);
 }
 
+var generateAnalysisTabulator = function(element, table, source, id, scrollTo) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.audioblast.org/analysis/"+table+"/columns/?output=nakedJSON", true);
+  xhr.extraInfo = [element, table, source, id, scrollTo];
+  xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var table = this.extraInfo[1];
+        var element = this.extraInfo[0];
+        var source = this.extraInfo[2];
+        var id = this.extraInfo[3];
+        var scrollTo = this.extraInfo[4];
+        var cols = JSON.parse(this.responseText);
+        var ajaxURL = 'https://api.audioblast.org/analysis/'+table+'/?source='+source+'&id='+id+'&output=nakedJSON';
+        var table = new Tabulator(element, {
+         index:"startTime",
+         ajaxURL:ajaxURL,
+         height:"100%",
+         columns:parseColumns(cols),
+         dataLoaded: function(){
+          if (scrollTo != null) {
+            this.scrollToRow(scrollTo);
+          }
+         }
+        });
+      } else {
+        console.error(xhr.statusText);
+      }
+    }
+  };
+  xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+  };
+  xhr.send(null);
+}
+
 var parseColumns = function(cols) {
   for (var i = 0; i < cols.length; i++) {
     if (cols[i]["headerFilter"] == "range") {
