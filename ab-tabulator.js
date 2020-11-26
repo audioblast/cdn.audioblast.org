@@ -25,10 +25,10 @@ var generateTabulator = function(element, table) {
   xhr.send(null);
 }
 
-var generateAnalysisTabulator = function(element, table, source, id, scrollTo) {
+var generateAnalysisTabulator = function(element, table, source, id, data, scrollTo) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://api.audioblast.org/analysis/"+table+"/columns/?output=nakedJSON", true);
-  xhr.extraInfo = [element, table, source, id, scrollTo];
+  xhr.extraInfo = [element, table, source, id, data, scrollTo];
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -36,12 +36,13 @@ var generateAnalysisTabulator = function(element, table, source, id, scrollTo) {
         var element = this.extraInfo[0];
         var source = this.extraInfo[2];
         var id = this.extraInfo[3];
-        var scrollTo = this.extraInfo[4];
+        var data = this.extraInfo[4];
+        var scrollTo = this.extraInfo[5];
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/analysis/'+table+'/?source='+source+'&id='+id+'&output=nakedJSON';
         var table = new Tabulator(element, {
          index:"startTime",
-         ajaxURL:ajaxURL,
+         data:data,
          height:"100%",
          columns:parseColumns(cols),
          dataLoaded: function(){
