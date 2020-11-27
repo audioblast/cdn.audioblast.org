@@ -8,9 +8,14 @@ var generateTabulator = function(element, table) {
         var table = this.extraInfo[1];
         var element = this.extraInfo[0];
         var cols = JSON.parse(this.responseText);
-        var ajaxURL = 'https://api.audioblast.org/data/'+table+'/?output=nakedJSON';
+        var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
         var table = new Tabulator(element, {
+         ajaxProgressiveLoad:"load",
          ajaxURL:ajaxURL,
+         paginationDataSent:{
+            "size":"page_size", //change page request parameter to "pageNo"
+         },
+         ajaxFiltering:true,
          height:"100%",
          columns:parseColumns(cols)
         });
@@ -39,18 +44,28 @@ var generateAnalysisTabulator = function(element, table, source, id, data, scrol
         var data = this.extraInfo[4];
         var scrollTo = this.extraInfo[5];
         var cols = JSON.parse(this.responseText);
-        var ajaxURL = 'https://api.audioblast.org/analysis/'+table+'/?source='+source+'&id='+id+'&output=nakedJSON';
-        var table = new Tabulator(element, {
-         index:"startTime",
-         data:data,
-         height:"100%",
-         columns:parseColumns(cols),
-         dataLoaded: function(){
-          if (scrollTo != null) {
-            this.scrollToRow(scrollTo);
+        var ajaxURL = 'https://api.audioblast.org/analysis/'+table+'/?source='+source+'&id='+id;
+        var settings = {
+          index:"startTime",
+          height:"100%",
+          paginationDataSent:{
+            "size":"page_size", //change page request parameter to "pageNo"
+          },
+          columns:parseColumns(cols),
+          dataLoaded: function(){
+            if (scrollTo != null) {
+              this.scrollToRow(scrollTo);
+            }
           }
-         }
-        });
+        };
+        if (this.data == null ) {
+          settings.ajaxProgressiveLoad = "load";
+          settings.ajaxURL = ajaxURL;
+        } else {
+          settings.data = this.data;
+        }
+
+        var table = new Tabulator(element, settings);
       } else {
         console.error(xhr.statusText);
       }
