@@ -10,8 +10,12 @@ var generateTabulator = function(element, table) {
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
         var table = new Tabulator(element, {
+         rowDblClick:function(e, row){
+           window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
+         },
          ajaxProgressiveLoad:"load",
          ajaxURL:ajaxURL,
+         paginationSize:100,
          paginationDataSent:{
             "size":"page_size", //change page request parameter to "pageNo"
          },
@@ -48,6 +52,7 @@ var generateAnalysisTabulator = function(element, table, source, id, data, scrol
         var settings = {
           index:"startTime",
           height:"100%",
+          paginationSize:100,
           paginationDataSent:{
             "size":"page_size", //change page request parameter to "pageNo"
           },
