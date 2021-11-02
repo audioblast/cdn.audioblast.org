@@ -10,25 +10,19 @@ var generateTabulator = function(element, table) {
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
         var tabletabulator = new Tabulator(element, {
+          columns:parseColumns(cols),
+          
+          height:"100%",
+          
           ajaxURL:ajaxURL,
           progressiveLoad:"scroll",
           ajaxParams:{output:"tabulator"},
           ajaxFiltering:true,
           
-          pagination:"remote",
           paginationSize:100,
           paginationDataSent:{
             "size":"page_size",
-          },
-          
-          
-         rowDblClick:function(e, row){
-           window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
-         },
-         
-         height:"100%",
-         columns:parseColumns(cols),
-         
+          }
         });
       } else {
         console.error(xhr.statusText);
