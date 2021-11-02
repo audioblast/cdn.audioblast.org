@@ -20,7 +20,11 @@ var generateTabulator = function(element, table) {
          },
          
          height:"100%",
-         columns:parseColumns(cols)
+         columns:parseColumns(cols),
+          
+         ajaxResponse:function(url, params, response){
+           return response.data;
+         },
         });
       } else {
         console.error(xhr.statusText);
