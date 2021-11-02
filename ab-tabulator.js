@@ -13,8 +13,6 @@ var generateTabulator = function(element, table) {
           ajaxURL:ajaxURL,
           progressiveLoad:"scroll",
           ajaxParams:{output:"tabulator"},
-          ajaxURL:"/exampledata/ajaxprogressive",
-    
         });
       } else {
         console.error(xhr.statusText);
