@@ -13,18 +13,6 @@ var generateTabulator = function(element, table) {
          ajaxURL:ajaxURL,
          ajaxProgressiveLoad:"scroll",
          ajaxParams:{output:"tabulator"},
-         ajaxFiltering:true,
-          
-         rowDblClick:function(e, row){
-           window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
-         },
-         
-         height:"100%",
-         columns:parseColumns(cols),
-          
-         ajaxResponse:function(url, params, response){
-           return response.data;
-         },
         });
       } else {
         console.error(xhr.statusText);
