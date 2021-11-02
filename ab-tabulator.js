@@ -14,10 +14,7 @@ var generateTabulator = function(element, table) {
          ajaxProgressiveLoad:"scroll",
          ajaxParams:{output:"tabulator"},
          ajaxFiltering:true,
-         paginationDataSent:{
-            "size":"page_size",
-         },
-         
+          
          rowDblClick:function(e, row){
            window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
          },
