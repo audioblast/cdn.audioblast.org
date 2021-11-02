@@ -10,12 +10,12 @@ var generateTabulator = function(element, table) {
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
         var table = new Tabulator(element, {
-         ajaxURL:ajaxURL,
-         ajaxProgressiveLoad:"scroll",
-         ajaxParams:{output:"tabulator"},
-         paginationDataSent:{
-            "size":"page_size", //change page request parameter to "pageNo"
-         },
+          ajaxURL:ajaxURL,
+          ajaxProgressiveLoad:"scroll",
+          ajaxParams:{output:"tabulator"},
+          paginationDataSent:{
+            "size":"page_size",
+          },
         });
       } else {
         console.error(xhr.statusText);
