@@ -9,7 +9,7 @@ var generateTabulator = function(element, table) {
         var element = this.extraInfo[0];
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
-        var table = new Tabulator(element, {
+        var tabletabulator = new Tabulator(element, {
           ajaxURL:ajaxURL,
           ajaxProgressiveLoad:"scroll",
           ajaxParams:{output:"tabulator"},
