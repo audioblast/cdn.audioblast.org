@@ -17,7 +17,8 @@ var generateTabulator = function(element, table) {
           ajaxURL:ajaxURL,
           progressiveLoad:"scroll",
           ajaxParams:{output:"tabulator"},
-          ajaxFiltering:true,
+          
+          filterMode:"remote",
           
           paginationSize:100,
           paginationDataSent:{
