@@ -19,7 +19,7 @@ var generateTabulator = function(element, table) {
          pagination:"remote",
          paginationSize:100,
          paginationDataSent:{
-            "size":"page_size", //change page request parameter to "pageNo"
+            "size":"page_size",
          },
          ajaxFiltering:true,
          height:"100%",
