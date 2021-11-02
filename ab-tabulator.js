@@ -10,18 +10,20 @@ var generateTabulator = function(element, table) {
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
         var table = new Tabulator(element, {
-         rowDblClick:function(e, row){
-           window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
-         },
+         ajaxURL:ajaxURL,
          ajaxProgressiveLoad:"load",
          ajaxParams:{output:"tabulator"},
-         ajaxURL:ajaxURL,
+         ajaxFiltering:true,
          pagination:"remote",
          paginationSize:100,
          paginationDataSent:{
             "size":"page_size",
          },
-         ajaxFiltering:true,
+         
+         rowDblClick:function(e, row){
+           window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
+         },
+         
          height:"100%",
          columns:parseColumns(cols)
         });
