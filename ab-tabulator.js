@@ -11,8 +11,10 @@ var generateTabulator = function(element, table) {
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
         var tabletabulator = new Tabulator(element, {
           ajaxURL:ajaxURL,
-          ajaxProgressiveLoad:"scroll",
+          progressiveLoad:"scroll",
           ajaxParams:{output:"tabulator"},
+          ajaxURL:"/exampledata/ajaxprogressive",
+    
         });
       } else {
         console.error(xhr.statusText);
