@@ -14,6 +14,7 @@ var generateTabulator = function(element, table) {
            window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
          },
          ajaxProgressiveLoad:"load",
+         ajaxParams:{output:"tabulator"},
          ajaxURL:ajaxURL,
          pagination:"remote",
          paginationSize:100,
