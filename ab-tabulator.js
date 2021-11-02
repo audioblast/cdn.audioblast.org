@@ -13,9 +13,6 @@ var generateTabulator = function(element, table) {
           ajaxURL:ajaxURL,
           ajaxProgressiveLoad:"scroll",
           ajaxParams:{output:"tabulator"},
-          paginationDataSent:{
-            "size":"page_size",
-          },
         });
       } else {
         console.error(xhr.statusText);
