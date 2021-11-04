@@ -19,7 +19,7 @@ var generateTabulator = function(element, table) {
           
           filterMode:"remote",
           
-          paginationSize:100,
+          paginationSize:50,
           paginationDataSent:{
             "size":"page_size",
           }
