@@ -5,7 +5,7 @@ var generateTabulator = function(element, table) {
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        var tableTab = this.extraInfo[1];
+        var table = this.extraInfo[1];
         var element = this.extraInfo[0];
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
