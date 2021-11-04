@@ -16,7 +16,7 @@ var generateTabulator = function(element, table) {
          ajaxProgressiveLoad:"load",
          ajaxURL:ajaxURL,
          pagination:"remote",
-         paginationSize:100,
+         paginationSize:50,
          paginationDataSent:{
             "size":"page_size", //change page request parameter to "pageNo"
          },
