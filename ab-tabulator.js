@@ -9,20 +9,17 @@ var generateTabulator = function(element, table) {
         var element = this.extraInfo[0];
         var cols = JSON.parse(this.responseText);
         var ajaxURL = 'https://api.audioblast.org/data/'+table+'/';
-        var table = new Tabulator(element, {
-         rowDblClick:function(e, row){
-           window.open("https://view.audioblast.org/?source="+row._row.data.source+"&id="+row._row.data.id);
-         },
-         ajaxProgressiveLoad:"load",
-         ajaxURL:ajaxURL,
-         pagination:"remote",
-         paginationSize:50,
-         paginationDataSent:{
-            "size":"page_size", //change page request parameter to "pageNo"
-         },
-         ajaxFiltering:true,
-         height:"100%",
-         columns:parseColumns(cols)
+        var tabletabulator = new Tabulator(element, {
+           columns:parseColumns(cols),
+           height:"100%",           
+           ajaxURL:ajaxURL,
+           progressiveLoad:"scroll",
+           
+           filterMode:"remote",
+           paginationSize:50,
+           paginationDataSent:{
+             "size":"page_size",
+           }
         });
       } else {
         console.error(xhr.statusText);
