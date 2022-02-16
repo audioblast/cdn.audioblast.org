@@ -49,9 +49,11 @@ var generateAnalysisTabulator = function(element, table, source, id, data, scrol
         var settings = {
           index:"startTime",
           height:"100%",
-          paginationSize:100,
-          paginationDataSent:{
-            "size":"page_size", //change page request parameter to "pageNo"
+          ajaxURL:ajaxURL,
+          progressiveLoad:"scroll",
+          paginationSize:50,
+          dataSendParams:{
+            "size":"page_size",
           },
           columns:parseColumns(cols),
           dataLoaded: function(){
