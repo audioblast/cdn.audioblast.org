@@ -1,3 +1,9 @@
+<?php
+if ($_SERVER['REQUEST_URI'] == "/ping") {
+  echo "pong";
+  exit;
+}
+?>
 <html>
 
 <head>
