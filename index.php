@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['page'] && $_GET['page'] == "ping")) {
+if (isset($_GET['page']) && $_GET['page'] == "ping") {
   echo "pong";
   exit;
 }
