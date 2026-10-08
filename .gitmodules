@@ -1,9 +1,0 @@
-[submodule "zcjs"]
-	path = zcjs
-	url = git@github.com:BioAcoustica/zcjs.git
-[submodule "tabulator"]
-	path = tabulator
-	url = git@github.com:olifolkerd/tabulator.git
-[submodule "plotly.js"]
-	path = plotly.js
-	url = git@github.com:plotly/plotly.js.git
