@@ -25,6 +25,7 @@ if (isset($_GET['page']) && $_GET['page'] == "ping") {
     <li><a href="plotly.js">plotly.js</a></li>
     <li><a href="tabulator">Tabulator</a></li>
     <li><a href="wavesurfer">wavesurfer</a></li>
+    <li><a href="wavesurfer-tiled-spectrogram">wavesurfer-tiled-spectrogram</a></li>
     <li><a href="zcjs">zcjs</a></li>
   </ul>
 
